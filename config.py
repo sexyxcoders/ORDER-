@@ -8,24 +8,24 @@ from pyrogram import filters
 load_dotenv()
 
 # Get this value from my.telegram.org/apps
-API_ID = int(getenv("API_ID", ""))
-API_HASH = getenv("API_HASH", "")
+API_ID = int(getenv("API_ID", None))
+API_HASH = getenv("API_HASH", None)
 
 # Get your token from @BotFather on Telegram.
-BOT_TOKEN = getenv("BOT_TOKEN", "")
+BOT_TOKEN = getenv("BOT_TOKEN", None)
 
 # Get your mongo url from cloud.mongodb.com
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "MelodiesKhushiBot")
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", None)
 PRIVATE_BOT_MODE = getenv("PRIVATE_BOT_MODE", None)
 
-DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 12000))
+DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 900))
 
 # Chat id of a group for logging bot's activities
-LOGGER_ID = int(getenv("LOGGER_ID", ""))
+LOGGER_ID = int(getenv("LOGGER_ID", None))
 
 # Get this value from @BRANDRD_ROBOT on Telegram by /id
-OWNER_ID = int(getenv("OWNER_ID", "7519668949"))
+OWNER_ID = int(getenv("OWNER_ID", "7250012103"))
 
 LOG = int(getenv("LOG", True))
 
@@ -38,7 +38,7 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 API_URL = getenv("API_URL", 'https://api.thequickearn.xyz')
 VIDEO_API_URL = getenv("VIDEO_API_URL", 'https://api.video.thequickearn.xyz')
 API_KEY = getenv("API_KEY", '30DxNexGenBotsfcfad8')
- 
+
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
@@ -49,8 +49,8 @@ GIT_TOKEN = getenv(
     "GIT_TOKEN", None
 )  # Fill this variable if your upstream repository is private
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/khuzziiii")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/+L3B63yuC1PtjMjFl")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/BRANDED_PAID_CC")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/BRANDED_WORLD")
 
 # Set this to True if you want the assistant to automatically leave chats after an interval
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
@@ -95,18 +95,22 @@ autoclean = []
 confirmer = {}
 
 
-START_IMG_URL = "https://files.catbox.moe/we2hw5.jpg"
-PING_IMG_URL = "https://files.catbox.moe/zywku1.jpg"
-PLAYLIST_IMG_URL = "https://files.catbox.moe/tj7a58.jpg"
-STATS_IMG_URL = "https://files.catbox.moe/jdwd10.jpg"
-TELEGRAM_AUDIO_URL = "https://files.catbox.moe/a80x63.jpg"
-TELEGRAM_VIDEO_URL = "https://files.catbox.moe/a80x63.jpg"
-STREAM_IMG_URL = "https://files.catbox.moe/lwm506.jpg"
-SOUNCLOUD_IMG_URL = "https://files.catbox.moe/kh9h0n.jpg"
-YOUTUBE_IMG_URL = "https://files.catbox.moe/a80x63.jpg"
-SPOTIFY_ARTIST_IMG_URL = "https://files.catbox.moe/kh9h0n.jpg"
-SPOTIFY_ALBUM_IMG_URL = "https://files.catbox.moe/kh9h0n.jpg"
-SPOTIFY_PLAYLIST_IMG_URL = "https://files.catbox.moe/kh9h0n.jpg"
+START_IMG_URL = getenv(
+    "START_IMG_URL", "https://files.catbox.moe/3gmzr6.jpg"
+)
+PING_IMG_URL = getenv(
+    "PING_IMG_URL", "https://files.catbox.moe/c3qdmb.jpg"
+)
+PLAYLIST_IMG_URL = "https://te.legra.ph/file/14eb59ea7d31229d8d751.jpg"
+STATS_IMG_URL = "https://te.legra.ph/file/4310ea5f523520b2b765b.jpg"
+TELEGRAM_AUDIO_URL = "https://te.legra.ph/file/923c1faac33d8c70335dc.jpg"
+TELEGRAM_VIDEO_URL = "https://te.legra.ph/file/6c66f8b192532fe758e82.jpg"
+STREAM_IMG_URL = "https://te.legra.ph/file/ebc4dc6357be06e08a3ed.jpg"
+SOUNCLOUD_IMG_URL = "https://te.legra.ph/file/d339f390ec168c19879c6.jpg"
+YOUTUBE_IMG_URL = "https://te.legra.ph/file/ee0cd53ab73f08f4a3627.jpg"
+SPOTIFY_ARTIST_IMG_URL = "https://te.legra.ph/file/5f9fb5bba66021c782d96.jpg"
+SPOTIFY_ALBUM_IMG_URL = "https://te.legra.ph/file/affe0afec5c7ad63676a4.jpg"
+SPOTIFY_PLAYLIST_IMG_URL = "https://te.legra.ph/file/3c446e8dee78ed0ca62ff.jpg"
 
 
 def time_to_seconds(time):
