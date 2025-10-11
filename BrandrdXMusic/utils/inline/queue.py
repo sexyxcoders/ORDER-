@@ -1,5 +1,4 @@
 from typing import Union
-
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
@@ -71,22 +70,12 @@ def aq_markup(_, chat_id):
             InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
             InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
         ],
-        [
-            InlineKeyboardButton(
-                text="⛦ ᴏᴡɴᴇʀ ⛦", url=f"https://t.me/nonsecularman"
-            ),
-            InlineKeyboardButton(
-                text="🥀 ꜱᴜᴘᴘᴏʀᴛ 🥀", url=f"https://t.me/+L3B63yuC1PtjMjFl"
-            ),
-        ],
         [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
     ]
     return buttons
 
 
-
 def queuemarkup(_, vidid, chat_id):
-
     buttons = [
         [
             InlineKeyboardButton(
@@ -110,12 +99,5 @@ def queuemarkup(_, vidid, chat_id):
                 text="ʀᴇᴘʟᴀ", callback_data=f"ADMIN Replay|{chat_id}"
             ),
         ],
-        [
-            InlineKeyboardButton(
-                text="๏ ᴍᴏʀᴇ ๏",
-                url="https://t.me/BRANDED_WORLD",
-            ),
-        ],
     ]
-
     return buttons
