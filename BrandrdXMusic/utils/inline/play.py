@@ -66,10 +66,6 @@ def stream_markup_timer(_, vidid, chat_id, played, dur):
             InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
             InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
         ],
-        [
-            InlineKeyboardButton(text="ᴏᴡɴᴇʀ", url="https://t.me/nonsecularman"),
-            InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url="https://t.me/+L3B63yuC1PtjMjFl"),
-        ],
         [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
     ]
 
@@ -84,10 +80,6 @@ def stream_markup(_, videoid, chat_id):
             InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
             InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
         ],
-        [
-            InlineKeyboardButton(text="ᴏᴡɴᴇʀ", url="https://t.me/BRANDEDKING8"),
-            InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url="https://t.me/BRANDED_WORLD"),
-        ],
         [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
     ]
 
@@ -98,7 +90,7 @@ def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
         [
             InlineKeyboardButton(
                 text=_["P_B_1"],
-                callback_data=f"Playlists {videoid}|{user_id}|{ptype}|a|{channel}|{fplay}",  # fix name if needed
+                callback_data=f"Playlists {videoid}|{user_id}|{ptype}|a|{channel}|{fplay}",
             ),
             InlineKeyboardButton(
                 text=_["P_B_2"],
@@ -153,7 +145,7 @@ def slider_markup(_, videoid, user_id, query, query_type, channel, fplay):
             ),
             InlineKeyboardButton(
                 text=_["CLOSE_BUTTON"],
-                callback_data=f"forceclose {videoid}|{user_id}",  # ✅ fixed
+                callback_data=f"forceclose {videoid}|{user_id}",
             ),
             InlineKeyboardButton(
                 text="▷",
