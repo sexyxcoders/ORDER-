@@ -4,7 +4,7 @@ import config
 from BrandrdXMusic import app
 
 
-def start_panel(_):
+def start_pannel(_):
     buttons = [
         [
             InlineKeyboardButton(
@@ -16,12 +16,12 @@ def start_panel(_):
             InlineKeyboardButton(text="• ʜᴇʟᴘ •", callback_data="settings_back_helper"),
             InlineKeyboardButton(text="• sᴇᴛ •", callback_data="settings_helper"),
         ],
+
+        # ✅ ADDED API PONG BUTTON HERE
         [
-            InlineKeyboardButton(
-                text="💗 API PONG",
-                callback_data="yt_api"
-            ),
+            InlineKeyboardButton(text="💗 ᴀᴘɪ ᴘᴏɴɢ", callback_data="api_pong"),
         ],
+
         [
             InlineKeyboardButton(text="• sᴏᴜꝛᴄᴇ •", url=config.SUPPORT_CHAT),
         ],
