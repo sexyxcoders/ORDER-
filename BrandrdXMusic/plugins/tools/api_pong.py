@@ -2,7 +2,7 @@ import time
 import psutil
 import requests
 from pyrogram import filters
-from ERAVIBES import app
+from BrandrdXMusic import app
 
 
 @app.on_callback_query(filters.regex("api_pong"))
