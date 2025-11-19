@@ -1,34 +1,39 @@
 import time
-import aiohttp
+import psutil
+import requests
+from pyrogram import filters
+from BrandrdxMusic import app
 
-@app.on_callback_query(filters.regex("yt_api"))
-async def yt_api_status(_, q):
-    start = time.time()
 
-    # Example API — replace with your actual YT API endpoint
-    api_url = "https://yourapi.com/yt/status"
+@app.on_callback_query(filters.regex("api_pong"))
+async def api_pong(client, query):
 
-    try:
-        async with aiohttp.ClientSession() as session:
-            async with session.get(api_url) as resp:
-                data = await resp.json()   # <-- if API returns JSON
-    except:
-        data = {"status": "DOWN"}   # fallback
+    start = time.time()
 
-    ping = round((time.time() - start) * 1000, 2)
+    # ── PING CHECK ──────────────────────────────────────────────
+    try:
+        requests.get("https://google.com", timeout=5)
+        ping = round((time.time() - start) * 1000, 2)
+        api_ping = f"{ping} ms"
+    except:
+        api_ping = "FAILED"
 
-    text = f"""
-「 𝐘𝐓-𝐏𝐋𝐀𝐘 𝐀𝐏𝐈 𝐒𝐓𝐀𝐓𝐔𝐒 」
+    # ── CPU / RAM ───────────────────────────────────────────────
+    cpu = psutil.cpu_percent()
+    ram = psutil.virtual_memory().percent
 
-📡 **API STATUS:** `{data.get('status', 'UNKNOWN')}`
-📨 **ENDPOINT:** `{api_url}`
+    # ── SERVER STATUS ───────────────────────────────────────────
+    server_status = "ᴏɴʟɪɴᴇ" if cpu < 90 else "ᴏᴠᴇʀʟᴏᴀᴅ"
 
-⚡ **PING:** `{ping} ms`
-⏱ **CHECKED:** `{time.strftime('%I:%M:%S %p')}`
+    text = f"""
+"💗 Nᴇxᴀ Mᴜsɪᴄ — sʏsᴛᴇᴍ sᴛᴀᴛᴜs"
 
-{"🟩 EVERYTHING IS FINE" if data.get("status") == "OK" else "🟥 API DOWN"}
+"• ᴀᴘɪ ᴘɪɴɢ: {api_ping}"
+"• ᴄᴘᴜ ᴜsᴀɢᴇ: {cpu}%"
+"• ʀᴀᴍ ᴜsᴀɢᴇ: {ram}%"
+"• sᴇʀᴠᴇʀ: {server_status}"
+
+"ʏᴀʏᴀ !! ᴇᴠᴇʀʏᴛʜɪɴɢ ɪs ғɪɴᴇ..."
 """
 
-    await q.message.edit(text, reply_markup=InlineKeyboardMarkup(
-        [[InlineKeyboardButton("OK", callback_data="close")]]
-    ))
+    await query.answer(text, show_alert=True)
