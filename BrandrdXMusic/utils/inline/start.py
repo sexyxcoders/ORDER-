@@ -17,7 +17,7 @@ def start_panel(_):
             InlineKeyboardButton(text="• sᴇᴛ •", callback_data="settings_helper"),
         ],
         [
-            InlineKeyboardButton(text="💗 API PONG", callback_data="api_pong"),
+            InlineKeyboardButton(text="💗 API PONG", callback_data="yt_api),
         ],
         [
             InlineKeyboardButton(text="• sᴏᴜꝛᴄᴇ •", url=config.SUPPORT_CHAT),
