@@ -35,7 +35,7 @@ from BrandrdXMusic.utils.inline.settings import (
     setting_markup,
     vote_mode_markup,
 )
-from BrandrdXMusic.utils.inline.start import private_panel
+from BrandrdXMusic.utils.inline import private_panel
 from config import BANNED_USERS, OWNER_ID, MUSIC_BOT_NAME, START_IMG_URL
 
 
