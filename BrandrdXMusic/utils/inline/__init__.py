@@ -6,4 +6,3 @@ from .settings import *
 from .speed import *
 from .start import *
 from .playlist import *
-from .private import *
